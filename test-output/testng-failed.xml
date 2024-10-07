@@ -6,9 +6,8 @@
       <class name="driverFactory.DriverScript">
         <methods>
           <include name="setUp"/>
+          <include name="deleteCustomer"/>
           <include name="tearDown"/>
-          <include name="addingCustomer"/>
-          <include name="adminLoginValidation"/>
         </methods>
       </class> <!-- driverFactory.DriverScript -->
     </classes>

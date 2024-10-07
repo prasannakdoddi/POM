@@ -1,73 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="2" passed="2" failed="0" skipped="0">
+<testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Login Successfull with admin & master :: Test Pass<br>]]>
+      <![CDATA[Customer-00000011230 delete successfully<br>]]>
     </line>
     <line>
-      <![CDATA[Customer Customer-00000011222 Add Success :: Test Pass<br>]]>
+      <![CDATA[Customer-00000011231 delete successfully<br>]]>
     </line>
     <line>
-      <![CDATA[Customer Customer-00000011223 Add Success :: Test Pass<br>]]>
-    </line>
-    <line>
-      <![CDATA[Customer Customer-00000011224 Add Success :: Test Pass<br>]]>
-    </line>
-    <line>
-      <![CDATA[Customer Customer-00000011225 Add Success :: Test Pass<br>]]>
-    </line>
-    <line>
-      <![CDATA[Customer Customer-00000011226 Add Success :: Test Pass<br>]]>
-    </line>
-    <line>
-      <![CDATA[Customer Customer-00000011227 Add Success :: Test Pass<br>]]>
-    </line>
-    <line>
-      <![CDATA[Customer Customer-00000011228 Add Success :: Test Pass<br>]]>
+      <![CDATA[Customer-00000011229 delete successfully<br>]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-10-06T12:08:03Z" name="Default suite" finished-at="2024-10-06T12:09:12Z" duration-ms="69029">
+  <suite started-at="2024-10-07T06:27:14Z" name="Default suite" finished-at="2024-10-07T06:28:18Z" duration-ms="63995">
     <groups>
     </groups>
-    <test started-at="2024-10-06T12:08:03Z" name="Default test" finished-at="2024-10-06T12:09:12Z" duration-ms="69029">
+    <test started-at="2024-10-07T06:27:14Z" name="Default test" finished-at="2024-10-07T06:28:18Z" duration-ms="63995">
       <class name="driverFactory.DriverScript">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:driverFactory.DriverScript@67d18ed7]" started-at="2024-10-06T17:38:03Z" name="setUp" finished-at="2024-10-06T17:38:06Z" duration-ms="2993" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:driverFactory.DriverScript@132e0cc]" started-at="2024-10-07T11:57:14Z" name="setUp" finished-at="2024-10-07T11:57:17Z" duration-ms="3227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="adminLoginValidation()[pri:0, instance:driverFactory.DriverScript@67d18ed7]" started-at="2024-10-06T17:38:06Z" name="adminLoginValidation" finished-at="2024-10-06T17:38:11Z" duration-ms="4544" status="PASS">
+        <test-method signature="deleteCustomer()[pri:0, instance:driverFactory.DriverScript@132e0cc]" started-at="2024-10-07T11:57:17Z" name="deleteCustomer" finished-at="2024-10-07T11:58:17Z" duration-ms="60465" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Login Successfull with admin & master :: Test Pass<br>]]>
+              <![CDATA[Customer-00000011230 delete successfully<br>]]>
+            </line>
+            <line>
+              <![CDATA[Customer-00000011231 delete successfully<br>]]>
+            </line>
+            <line>
+              <![CDATA[Customer-00000011229 delete successfully<br>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- adminLoginValidation -->
-        <test-method signature="addingCustomer()[pri:0, instance:driverFactory.DriverScript@67d18ed7]" started-at="2024-10-06T17:38:11Z" name="addingCustomer" finished-at="2024-10-06T17:39:12Z" duration-ms="61190" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Customer Customer-00000011222 Add Success :: Test Pass<br>]]>
-            </line>
-            <line>
-              <![CDATA[Customer Customer-00000011223 Add Success :: Test Pass<br>]]>
-            </line>
-            <line>
-              <![CDATA[Customer Customer-00000011224 Add Success :: Test Pass<br>]]>
-            </line>
-            <line>
-              <![CDATA[Customer Customer-00000011225 Add Success :: Test Pass<br>]]>
-            </line>
-            <line>
-              <![CDATA[Customer Customer-00000011226 Add Success :: Test Pass<br>]]>
-            </line>
-            <line>
-              <![CDATA[Customer Customer-00000011227 Add Success :: Test Pass<br>]]>
-            </line>
-            <line>
-              <![CDATA[Customer Customer-00000011228 Add Success :: Test Pass<br>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- addingCustomer -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:driverFactory.DriverScript@67d18ed7]" started-at="2024-10-06T17:39:12Z" name="tearDown" finished-at="2024-10-06T17:39:12Z" duration-ms="283" status="PASS">
+        </test-method> <!-- deleteCustomer -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:driverFactory.DriverScript@132e0cc]" started-at="2024-10-07T11:58:17Z" name="tearDown" finished-at="2024-10-07T11:58:18Z" duration-ms="280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

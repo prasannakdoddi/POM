@@ -78,6 +78,27 @@ public class CustomerPage {
 	@FindBy(xpath ="//table[@class = 'table ewTable']/tbody/tr[1]/td[5]/div/span/span")
 	WebElement ObjWebTable;
 	
+	@FindBy(xpath = "//input[@name = 'key_m[]']")
+	WebElement ObjTabCheckbox;
+	
+	@FindBy(xpath = "(//button[@class='dropdown-toggle btn btn-default btn-sm btn-sm'])[1]")
+	WebElement ObjOptions;
+	
+	@FindBy(xpath ="(//a[@data-caption = 'Delete Selected Records'])[1]")
+	WebElement ObjDeleteOption;
+
+	@FindBy(xpath = "//button[@class='ajs-button btn btn-primary']")
+	WebElement ObjConfirmOK;
+	
+	@FindBy(xpath = "//div[text() = 'Alert']")
+	WebElement ObjNoCustAlert;
+	
+	@FindBy(xpath = "//div[@class='alert alert-success ewSuccess']")
+	WebElement ObjSuccessAlert;
+	
+	@FindBy(xpath = "(//button[text() = 'OK'])[6]")
+	WebElement ObjDelAlertOK;
+	
 	public boolean addCustomer(String CustName, 
 								String Address, 
 								String City, 
@@ -131,6 +152,64 @@ public class CustomerPage {
 			Reporter.log("Customer " + Expected_Data + "  Add not Success :: Test Fail" + Expected_Data + " " + Actual_Data,true);
 			return false;
 		}
+	}
+	
+	public void searchCustomer(String CustNo)
+	{
+		if(!this.ObjSearchTextBox.isDisplayed())
+		{
+			this.ObjClickSearchPanel.click();
+		}
+		
+		this.ObjSearchTextBox.clear();
+		this.ObjSearchTextBox.sendKeys(CustNo);
+		this.ObjClickSearch.click();
+	}
+	
+	public boolean deleteCustomer(String CustNo) throws Throwable
+	{
+		boolean status = false;
+		this.ObjClickCostomerLink.click();
+		Thread.sleep(1000);
+		searchCustomer(CustNo);
+		Thread.sleep(1000);
+		try
+		{
+			if(this.ObjNoCustAlert.isDisplayed())
+				Reporter.log(CustNo + " " + "does not exist",true);
+		}
+		catch(Exception e)
+		{
+			this.ObjTabCheckbox.click();
+			this.ObjOptions.click();
+			this.ObjDeleteOption.click();
+			this.ObjConfirmOK.click();
+			Thread.sleep(1000);
+			
+			if(this.ObjSuccessAlert.isDisplayed())
+			{
+				Thread.sleep(1000);
+				this.ObjDelAlertOK.click();
+				Thread.sleep(1000);
+				searchCustomer(CustNo);
+				Thread.sleep(1000);
+				try
+				{
+					if(this.ObjNoCustAlert.isDisplayed())
+					{
+						Reporter.log(CustNo + " " + "deleted successfully",true);
+						status = true;
+					}
+				}
+				catch(Exception ee)
+				{
+					Reporter.log(CustNo + " " + "not deleted",true);
+				}
+			}
+			
+		}
+		return status;
+		
 	}
 	
 }
