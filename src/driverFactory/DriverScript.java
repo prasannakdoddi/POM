@@ -26,7 +26,7 @@ public class DriverScript extends AppUtil{
 	ExtentReports reports;
 	ExtentTest logger;
 	
-	@Test(enabled = false)
+	@Test(priority = 0)
 	public void adminLoginValidation() throws Throwable
 	{
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
@@ -66,7 +66,7 @@ public class DriverScript extends AppUtil{
 		logout.adminLogout();
 	}
 	
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void addingCustomer() throws Throwable
 	{
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
@@ -119,7 +119,7 @@ public class DriverScript extends AppUtil{
 		logout.adminLogout();
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void deleteCustomer() throws Throwable
 	{
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
@@ -149,12 +149,12 @@ public class DriverScript extends AppUtil{
 			if(status)
 			{
 				logger.log(LogStatus.PASS, "Customer add success :: Test Pass");
-				xl.setCellData("Delete Customer", i, 9, "Pass", outputpath);
+				xl.setCellData("Delete Customer", i, 1, "Pass", outputpath);
 			}
 			else
 			{
 				logger.log(LogStatus.FAIL, "Customer add not success :: Test Fail");
-				xl.setCellData("Delete Customer", i, 9, "Fail", outputpath);
+				xl.setCellData("Delete Customer", i, 1, "Fail", outputpath);
 			}
 			
 			reports.endTest(logger);
