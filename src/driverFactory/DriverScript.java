@@ -2,6 +2,7 @@ package driverFactory;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -25,13 +26,14 @@ public class DriverScript extends AppUtil{
 	
 	ExtentReports reports;
 	ExtentTest logger;
+		
 	
 	@Test(priority = 0)
 	public void adminLoginValidation() throws Throwable
 	{
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
 		LogoutPage logout = PageFactory.initElements(driver, LogoutPage.class);
-		ExcelFileUtils xl = new ExcelFileUtils(inputpath);
+		//ExcelFileUtils xl = new ExcelFileUtils(inputpath);
 		
 		reports = new ExtentReports(adminReportspath);
 		logger = reports.startTest("Admin Login");
@@ -51,13 +53,13 @@ public class DriverScript extends AppUtil{
 		{
 			Reporter.log("Login Successfull with " + Username + " & " + Password + " :: Test Pass",true);
 			logger.log(LogStatus.PASS, "Login sucessfull with " + Username + " & " + Password);
-			//xl.setCellData("Admin Login", 1, 2, "Pass", outputpath);
+			xl.setCellData("Admin Login", 1, 2, "Pass", outputpath);
 		}
 		else
 		{
 			Reporter.log("Login not Success with " + Username + " & " + Password + " :: Test Fail",true);
 			logger.log(LogStatus.FAIL, "Login not sucess with " + Username + " & " + Password);
-			//xl.setCellData("Admin Login", 1, 2, "Fail", outputpath);
+			xl.setCellData("Admin Login", 1, 2, "Fail", outputpath);
 		}
 		
 		reports.endTest(logger);
@@ -72,7 +74,7 @@ public class DriverScript extends AppUtil{
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
 		LogoutPage logout = PageFactory.initElements(driver, LogoutPage.class);
 		CustomerPage customer = PageFactory.initElements(driver, CustomerPage.class);
-		ExcelFileUtils xl = new ExcelFileUtils(inputpath);
+		//ExcelFileUtils xl = new ExcelFileUtils(inputpath);
 		
 		reports = new ExtentReports(newcustomerReportspath);
 		logger = reports.startTest("New Customer");
@@ -125,7 +127,7 @@ public class DriverScript extends AppUtil{
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
 		LogoutPage logout = PageFactory.initElements(driver, LogoutPage.class);
 		CustomerPage customer = PageFactory.initElements(driver, CustomerPage.class);
-		ExcelFileUtils xl = new ExcelFileUtils(inputpath);
+		//ExcelFileUtils xl = new ExcelFileUtils(inputpath);
 		
 		reports = new ExtentReports(deletecustomerReportspath);
 		logger = reports.startTest("Delete Customer");
